@@ -5,14 +5,19 @@ This repo contains the binaries that are used to compile GRPC .proto files into 
 To install on your local maven repository do the following:
 
 ```bash
-git clone https://github.com/Iqop/GRPConARM32
-cd GRPConARM32
-mkdir -p ~/.m2/repository/io/grpc/protoc-gen-grpc-java/1.34.0/
-mkdir -p ~/.m2/repository/com/google/protobuf/protoc/3.12.4/
-cp protoc-gen-grpc-java-1.34.0-linux-arm_32.exe ~/.m2/repository/io/grpc/protoc-gen-grpc-java/1.34.0/
-cp protoc-3.12.4-linux-arm_32.exe ~/.m2/repository/com/google/protobuf/protoc/3.12.4/
-unzip libprotoc.so.zip
-cp libprotoc.so /usr/lib/
+git clone https://github.com/Iqop/GRPConARM32 
+cd GRPConARM32 
+mkdir -p ~/.m2/repository/io/grpc/protoc-gen-grpc-java/1.34.0/ 
+mkdir -p ~/.m2/repository/com/google/protobuf/protoc/3.14.0/ 
+cp protoc-gen-grpc-java-1.34.0-linux-arm_32.exe ~/.m2/repository/io/grpc/protoc-gen-grpc-java/1.34.0/ 
+cp protoc-3.14.0-linux-arm_32.exe ~/.m2/repository/com/google/protobuf/protoc/3.14.0/ 
+unzip libprotoc.so.zip 
+cp libprotoc.so /usr/lib/ 
+unzip libprotobuf-lite.so.zip 
+cp  libprotobuf-lite.so /usr/lib 
+unzip libprotobuf.so.zip 
+cp libprotobuf.so /usr/lib
+ldconfig 
 ```
 With this the following plugin configuration can find the compiled binaries
 
