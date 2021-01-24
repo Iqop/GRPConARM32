@@ -5,6 +5,14 @@ This repo contains the binaries that are used to compile GRPC .proto files into 
 To install on your local maven repository do the following:
 
 ```bash
+git clone https://github.com/google/protobuf.git
+cd protobuf 
+git checkout v3.14.x 
+./autogen.sh 
+./configure --prefix=/usr
+make -j 4 
+make install
+cd .. 
 git clone https://github.com/Iqop/GRPConARM32
 cd GRPConARM32
 mkdir -p ~/.m2/repository/io/grpc/protoc-gen-grpc-java/1.34.0/
